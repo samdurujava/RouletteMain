@@ -10,14 +10,13 @@ public class Main {
         Scanner read = new Scanner(System.in);
 
         System.out.println("Welcome to Roulette!\n");
-
         String bet = "";
 
         int won = 0;
 
         int lost = 0;
 
-        double moneyEarned = 0;
+        double madeMoney = 0;
 
         while (!bet.equals("false")) {
 
@@ -39,7 +38,7 @@ public class Main {
 
             read.nextLine();
 
-            double result = roulette.gamble(amount) - amount;
+            double result = roulette.gambling(amount) - amount;
 
             if (result > 0) {
 
@@ -54,9 +53,9 @@ public class Main {
                 lost++;
             }
 
-            moneyEarned += result;
+            madeMoney += result;
 
-            System.out.println("You currently have: $" + String.format("%.2f", moneyEarned) +
+            System.out.println("You currently have: $" + String.format("%.2f", madeMoney) +
 
                     "\n\nWould you like to play again? (true|false)?");
 
@@ -64,9 +63,9 @@ public class Main {
 
         }
 
-        System.out.println("Thank you for playing!\nThis is how much you have remaining: $" + String.format("%.2f", moneyEarned)
+        System.out.println("Thank you for playing!\nThis is how much you have remaining: $" + String.format("%.2f", madeMoney)
 
-                + "\nYou've won " + won + "games(s) and lost " + lost + "game(s)");
+                + "\nYou've won " + won + " games(s) and lost " + lost + " game(s)");
 
     }
 

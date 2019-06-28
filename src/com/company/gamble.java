@@ -8,12 +8,12 @@ import java.util.Random;
 
 public class gamble {
 
-    private int betType;
+    private int betType = -1;
 
     private ArrayList<String> types;
 
 
-    public gamble() {
+    gamble() {
 
         types = new ArrayList<>();
 
@@ -29,17 +29,15 @@ public class gamble {
 
         types.add("high");
 
-        betType = -1;
-
     }
 
-    public double gamble(double money) {
+    public double gambling(double money) {
 
-        Random r = new Random();
+        Random rand = new Random();
 
-        int number = r.nextInt(36) + 1;
+        int number = rand.nextInt(36) + 1;
 
-        boolean red = r.nextBoolean();
+        boolean red = rand.nextBoolean();
 
         String color = "red";
 
